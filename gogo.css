@@ -1,0 +1,169 @@
+/* 1. 基本重置與字體設定 */
+:root {
+    --primary-color: #007bff; /* 品牌藍色 */
+    --secondary-color: #28a745; /* 強調綠色 */
+    --text-color: #333;
+    --bg-light: #f8f9fa;
+    --bg-dark: #343a40;
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: 'Noto Sans TC', sans-serif;
+    line-height: 1.6;
+    color: var(--text-color);
+    background-color: #fff;
+}
+
+/* 2. 導覽列 (Navbar) */
+.navbar {
+    background-color: var(--primary-color);
+    color: white;
+    padding: 15px 0;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    position: sticky; /* 導覽列固定在頂部 */
+    top: 0;
+    z-index: 1000;
+}
+
+.navbar nav {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+.navbar .logo {
+    font-size: 1.8em;
+    font-weight: 700;
+    letter-spacing: 1px;
+}
+
+/* 3. 標題區塊 (Hero Section) */
+.hero-section {
+    background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('https://picsum.photos/1600/600/?random=dog') no-repeat center center/cover; /* 隨機狗圖片 */
+    height: 60vh; /* 佔據視窗高度的 60% */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    color: white;
+}
+
+.hero-content h1 {
+    font-size: 3em;
+    margin-bottom: 15px;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.6);
+}
+
+.hero-content p {
+    font-size: 1.5em;
+    margin-bottom: 30px;
+}
+
+.cta-button {
+    display: inline-block;
+    background-color: var(--secondary-color);
+    color: white;
+    text-decoration: none;
+    padding: 12px 30px;
+    border-radius: 5px;
+    font-weight: 700;
+    transition: background-color 0.3s;
+}
+
+.cta-button:hover {
+    background-color: #1e7e34; /* 綠色 Hover 效果 */
+}
+
+/* 4. 主要內容區塊 (Main Content) */
+.main-content {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 40px 20px;
+}
+
+.content-block {
+    padding: 60px 40px;
+    margin-bottom: 30px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.05);
+    background-color: #fff;
+}
+
+.content-block h2 {
+    font-size: 2.2em;
+    color: var(--primary-color);
+    margin-bottom: 25px;
+    padding-bottom: 10px;
+    border-bottom: 3px solid var(--primary-color);
+    display: inline-block;
+}
+
+.content-block p {
+    margin-bottom: 20px;
+}
+
+/* 特殊內容區塊：深色背景 */
+.dark-bg {
+    background-color: var(--bg-dark);
+    color: var(--bg-light);
+}
+
+.dark-bg h2 {
+    color: white;
+    border-bottom-color: white;
+}
+
+.dark-bg .food-list-container {
+    display: flex;
+    gap: 30px;
+    margin-top: 20px;
+}
+
+.dark-bg h3 {
+    color: var(--secondary-color);
+    margin-bottom: 10px;
+}
+
+/* 列表樣式 */
+ul, ol {
+    margin-left: 20px;
+    list-style-position: inside;
+}
+
+li {
+    margin-bottom: 8px;
+}
+
+/* 5. 頁腳 (Footer) */
+footer {
+    text-align: center;
+    padding: 20px;
+    background-color: var(--bg-dark);
+    color: var(--bg-light);
+    font-size: 0.9em;
+}
+
+/* 6. 響應式設計 (RWD) */
+@media (max-width: 768px) {
+    .hero-content h1 {
+        font-size: 2.5em;
+    }
+
+    .hero-content p {
+        font-size: 1.2em;
+    }
+
+    .content-block {
+        padding: 40px 20px;
+    }
+
+    .dark-bg .food-list-container {
+        flex-direction: column; /* 小螢幕垂直堆疊 */
+    }
+}
